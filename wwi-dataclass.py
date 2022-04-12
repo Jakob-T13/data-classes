@@ -19,6 +19,12 @@ class Orders:
     lastEditedBy: int
     lastEditedWhen: str
     
+    def __gt__(self,other):
+        return self.orderID > other.orderID
+        
+    def __ge__(self,other):
+        return self.orderID >= other.orderID
+    
 @dataclass
 class Invoices:
     invoiceID: int
@@ -46,6 +52,12 @@ class Invoices:
     confirmedReceivedBy: str
     lastEditedBy: int
     lastEditedWhen: str
+    
+    def __gt__(self,other):
+        return self.invoiceID > other.invoiceID
+        
+    def __ge__(self,other):
+        return self.invoiceID >= other.invoiceID
     
 @dataclass
 class Customers:
